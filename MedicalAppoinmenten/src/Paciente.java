@@ -1,28 +1,20 @@
 package src;
 
 //Clase Padre
-public class Paciente {
+public class Paciente extends Usuario {
     // Propiedad o Atributo
-    int id;
-    private String nombre;
-    private String correo;
-    private String direccion;
-    private String telefono;
-    private String aniversario;
     private double peso;
+    private String aniversario;
     private String altura;
-    private String blood;
+    private String sangre;
 
-    // Constructor
-    Paciente(String nombre, String correo, String direccion) {
-        this.nombre = nombre;
-        this.correo = correo;
-        this.direccion = direccion;
+    // Constructor o pude haber mas!
+    Paciente(String nombre, String email) {
+        super(nombre, email);
     }
 
     // Metodos Setters and Getters
-    public void setPeso(double peso) // los paramentros son los valores que pones los usuarios
-    {
+    public void setPeso(double peso) {
         this.peso = peso;
     }
 
@@ -30,27 +22,38 @@ public class Paciente {
         return this.peso + " Kg.";
     }
 
-    public void setTelefono(String nroTelefono) {
-        if (nroTelefono.length() > 9) {
-            System.out.println("Solo se permite 8 digítos");
-        } else if (nroTelefono.length() < 9) {
-            System.out.println("El numero debe ser ser mas largo");
-        } else {
-
-            this.telefono = nroTelefono;
-        }
+    public void setAniversario(String aniversario) {
+        this.aniversario = aniversario;
     }
 
-    public String getTelefono() {
-        return "Nro: " + this.telefono;
+    public String getAniversario() {
+        return "Cumpleaños: " + this.aniversario;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setAltura(String altura) {
+        this.altura = altura;
     }
 
-    public String getNombre() {
-        return "Nombre: " + this.nombre;
+    public String getAltura() {
+        return "Altura: " + this.altura;
+    }
+
+    public void setSangre(String sangre) {
+        this.sangre = sangre;
+    }
+
+    public String getSangre() {
+        return "Sangre: " + this.sangre;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()
+                + "\n"
+                + "Peso: " + "\n" + peso + "\n"
+                + "Aniversario: " + aniversario + "\n"
+                + "Altura: " + altura + "\n"
+                + "Sangre: " + sangre + "\n";
     }
 
 }
