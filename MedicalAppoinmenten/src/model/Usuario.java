@@ -1,6 +1,6 @@
-package src;
+package src.model;
 
-public class Usuario {
+public abstract class Usuario {
 
     private int id;
     private String nombre;
@@ -91,5 +91,7 @@ public class Usuario {
                 + getTelefono() + "\n"
                 + getRol();
     }
+
+    public abstract void mostrarInformacion();
 
 }

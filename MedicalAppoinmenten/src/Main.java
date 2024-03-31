@@ -2,18 +2,21 @@ package src;
 
 import java.util.Date;
 
+import src.model.Doctor;
+import src.model.Paciente;
+
 public class Main {
     public static void main(String[] args) {
 
-        Doctor doctor1 = new Doctor("Victor", "victor@gmail.com");// Instanciar o
-        // crear nuevo objeto
-        doctor1.addFechaAgendamiento(new Date(), "4am");
-        doctor1.addFechaAgendamiento(new Date(), "8pm");
-        doctor1.addFechaAgendamiento(new Date(), "12pm");
-        doctor1.setTelefono("975151515");
-        doctor1.setRol("Doctor");
-        doctor1.setEspecialidad("Pediatria");
-        System.out.println(doctor1);
+        // Doctor doctor1 = new Doctor("Victor", "victor@gmail.com");// Instanciar o
+        // // crear nuevo objeto
+        // doctor1.addFechaAgendamiento(new Date(), "4am");
+        // doctor1.addFechaAgendamiento(new Date(), "8pm");
+        // doctor1.addFechaAgendamiento(new Date(), "12pm");
+        // doctor1.setTelefono("975151515");
+        // doctor1.setRol("Doctor");
+        // doctor1.setEspecialidad("Pediatria");
+        // System.out.println(doctor1);
 
         // for (Doctor.FechaDeCitas citasDoctor : doctor1.getFechaAgendamiento()) {
         // System.out.println(citasDoctor.getId() + " " + citasDoctor.getFechaCita() + "
@@ -34,9 +37,9 @@ public class Main {
         // Paciente paciente1 = new Paciente("Samuel L Jackson", "jackson@gmail.com",
         // "EUA");
 
-        Paciente paciente2 = new Paciente("Jorge", "jorge@gmail.com");
-        paciente2.setRol("Paciente");
-        System.out.println(paciente2);
+        // Paciente paciente2 = new Paciente("Jorge", "jorge@gmail.com");
+        // paciente2.setRol("Paciente");v bfff
+        // System.out.println(paciente2);
         // System.out.println(paciente2.getNombre());
         // paciente1 = paciente2;
         // System.out.println(paciente1);
@@ -50,5 +53,11 @@ public class Main {
         // paciente1.setTelefono("985123123");
         // System.out.println(paciente1.getTelefono());
 
+        Doctor usuario = new Doctor("Fernando Lopez", "fer@email.com");
+
+        usuario.mostrarInformacion();
+
+        Paciente paciente = new Paciente("Jorge", "jorge@gmail.com");
+        paciente.mostrarInformacion();
     }
 }

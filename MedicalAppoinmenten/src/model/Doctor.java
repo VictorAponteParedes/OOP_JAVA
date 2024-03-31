@@ -1,4 +1,4 @@
-package src;
+package src.model;
 
 import java.util.Date;
 import java.util.ArrayList;
@@ -10,7 +10,7 @@ public class Doctor extends Usuario {
     // Constructor
     public Doctor(String nombre, String email) {
         super(nombre, email);
-        this.especialidad = especialidad;
+
     }
 
     // Getters and Setters
@@ -24,8 +24,9 @@ public class Doctor extends Usuario {
 
     ArrayList<FechaDeCitas> fechaCitas = new ArrayList<>();
 
-    public void addFechaAgendamiento(Date fechaCita, String dia) {
-        fechaCitas.add(new FechaDeCitas(fechaCita, dia));
+    // Metodo
+    public void addFechaAgendamiento(Date fechaCita, String hora) {
+        fechaCitas.add(new FechaDeCitas(fechaCita, hora));
     }
 
     public ArrayList<FechaDeCitas> getFechaAgendamiento() {
@@ -58,12 +59,23 @@ public class Doctor extends Usuario {
             return "Hora: " + this.hora;
         }
 
+        @Override
+        public String toString() {
+            return "Fechas disponibles: \n Fecha: " + fechaCita + "\n Hora: " + hora;
+        }
+
     }
 
     @Override
     public String toString() {
         return super.toString()
                 + "\n"
-                + "Especialidad: " + especialidad + "\n";
+                + "Especialidad: " + especialidad + "\n" + "Citas:" + fechaCitas.toString();
+    }
+
+    @Override
+    public void mostrarInformacion() {
+        System.out.println("Departamento: clinico");
+        System.out.println("Hospital: Central de Itá");
     }
 }

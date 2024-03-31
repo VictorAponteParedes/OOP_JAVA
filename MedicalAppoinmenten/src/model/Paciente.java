@@ -1,4 +1,4 @@
-package src;
+package src.model;
 
 //Clase Padre
 public class Paciente extends Usuario {
@@ -9,7 +9,7 @@ public class Paciente extends Usuario {
     private String sangre;
 
     // Constructor o pude haber mas!
-    Paciente(String nombre, String email) {
+    public Paciente(String nombre, String email) {
         super(nombre, email);
     }
 
@@ -54,6 +54,14 @@ public class Paciente extends Usuario {
                 + "Aniversario: " + aniversario + "\n"
                 + "Altura: " + altura + "\n"
                 + "Sangre: " + sangre + "\n";
+    }
+
+    @Override
+    public void mostrarInformacion() {
+        System.out.println("Departamento: clinico");
+        System.out.println("Historial dle paciente");
+        System.out.println("Paciente: 5 años");
+
     }
 
 }
